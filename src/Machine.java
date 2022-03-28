@@ -1,13 +1,4 @@
-
 public class Machine {
-	
-	private boolean clothesClean;
-	private boolean clothesDry;
-	
-	public Machine() {
-		clothesClean = false;
-		clothesDry = false;
-	}
 	
 	public boolean isDone(Boolean b) {
 		//in actuality, it would be programmed to check the moisture left in the clothes 
@@ -16,12 +7,13 @@ public class Machine {
 	}
 	
 	public void washMachine() {
+		Clothes c = new Clothes();
 		if(isFull()) {
 			System.out.println("Sorry, you will have to wait " + timeRemaining() + " minutes till the load finishes");
 			return;
 		}
-		while(!isDone(clothesClean)) {
-			if(isDone(clothesClean)) {
+		while(!isDone(c.isClean())) {
+			if(isDone(c.isClean())) {
 				System.out.println("Your clothes are ready, come pick them up.");
 				return;
 			}
@@ -32,12 +24,13 @@ public class Machine {
 	}
 	
 	public void dryMachine() {
+		Clothes c = new Clothes();
 		if(isFull()) {
 			System.out.println("Sorry, you will have to wait " + timeRemaining() + " minutes till the load finishes");
 			return;
 		}
-		while(!isDone(clothesDry)) {
-			if(isDone(clothesDry)) {
+		while(!isDone(c.isDry())) {
+			if(isDone(c.isDry())) {
 				System.out.println("Your clothes are ready, come pick them up.");
 				return;
 			}
@@ -47,14 +40,31 @@ public class Machine {
 		}
 	}
 	
-	public boolean isFull() {
-		return false;
-		
-	}
-	
-	public double timeRemaining() {
-		return 0;
-		
-	}
+    // Get washer/Dryer full data
+    public boolean isFull() {
+        // Random values for now
+        int falseInt = 0;
+        int trueInt = 1;
 
+        int boolValue = (int) Math.floor(Math.random() * (trueInt - falseInt + 1) + falseInt);
+        // If dryer doesn't have clothes
+        if (boolValue == 0) {
+            return false;
+        }
+        // If dryer has clothes
+        else {
+            return true;
+        }
+
+    }
+
+    // Get washing/dryer and get time remaining
+    public double timeRemaining() {
+        // Returns a random value between 0 and 60 which account for minutes remaining
+        float minNumber = 0;
+        float maxNumber = 60;
+        float timeRemaining = (float) Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+
+        return timeRemaining;
+    }
 }
