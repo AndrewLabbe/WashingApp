@@ -1,8 +1,5 @@
 
 public class Machine {
-    public static void main(String[] args) {
-        System.out.println((IsFull()));
-    }
 
     // Get washer/Dryer full data
     public static boolean IsFull() {
