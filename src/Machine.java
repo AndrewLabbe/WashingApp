@@ -1,19 +1,12 @@
 public class Machine {
 	
-	public boolean isDone(Boolean b) {
-		//in actuality, it would be programmed to check the moisture left in the clothes 
-		//but returning this value is a simplified method
-		return b;
-	}
-	
-	public void washMachine() {
-		Clothes c = new Clothes();
+	public void washMachine(Clothes c) {
 		if(isFull()) {
 			System.out.println("Sorry, you will have to wait " + timeRemaining() + " minutes till the load finishes");
 			return;
 		}
-		while(!isDone(c.isClean())) {
-			if(isDone(c.isClean())) {
+		while(!c.isClean()) {
+			if(c.isClean()) {
 				System.out.println("Your clothes are ready, come pick them up.");
 				return;
 			}
@@ -23,14 +16,13 @@ public class Machine {
 		}
 	}
 	
-	public void dryMachine() {
-		Clothes c = new Clothes();
+	public void dryMachine(Clothes c) {
 		if(isFull()) {
 			System.out.println("Sorry, you will have to wait " + timeRemaining() + " minutes till the load finishes");
 			return;
 		}
-		while(!isDone(c.isDry())) {
-			if(isDone(c.isDry())) {
+		while(c.isDry()) {
+			if(c.isDry()) {
 				System.out.println("Your clothes are ready, come pick them up.");
 				return;
 			}
