@@ -1,4 +1,4 @@
-public class Machine {
+public class Machine extends Rectangle{
 	
 	public void washMachine(Clothes c) {
 		if(isFull()) {
