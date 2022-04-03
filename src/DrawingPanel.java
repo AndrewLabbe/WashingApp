@@ -13,22 +13,22 @@ public class DrawingPanel extends JPanel {
 		this.setSize(500,400);
 		this.setBackground(Color.WHITE);
 		
-		washingMachine1 = new Rectangle();
+		washingMachine1 = new Machine();
 		washingMachine1.setLocation(10, 100);
 		washingMachine1.setColor(Color.BLUE);
 		washingMachine1.setSize(60, 60);
 		
-		washingMachine2 = new Rectangle();
+		washingMachine2 = new Machine();
 		washingMachine2.setLocation(100, 100);
 		washingMachine2.setColor(Color.BLUE);
 		washingMachine2.setSize(60, 60);
 		
-		dryingMachine1 = new Rectangle();
+		dryingMachine1 = new Machine();
 		dryingMachine1.setLocation(10, 200);
 		dryingMachine1.setColor(Color.GREEN);
 		dryingMachine1.setSize(60, 60);
 		
-		dryingMachine2 = new Rectangle();
+		dryingMachine2 = new Machine();
 		dryingMachine2.setLocation(100, 200);
 		dryingMachine2.setColor(Color.GREEN);
 		dryingMachine2.setSize(60, 60);
